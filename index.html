@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheSportsDB WYSIWYG Editor</title>
+    <script>
+      // Global boundary to suppress cross-origin "Script error." or failed WebSockets (HMR)
+      window.addEventListener('error', function (e) {
+        if (!e.message || e.message.includes('Script error.') || e.message.toLowerCase().includes('websocket')) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          return true;
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function (e) {
+        const reasonStr = String(e.reason || '');
+        const messageStr = String(e.reason?.message || '');
+        if (reasonStr.includes('Script error') || messageStr.toLowerCase().includes('websocket')) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

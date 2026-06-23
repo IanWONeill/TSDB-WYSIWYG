@@ -1,0 +1,6 @@
+{
+  "name": "TheSportsDB WYSIWYG Editor",
+  "description": "A block-based WYSIWYG editor for sports documents and live dashboards, integrated with TheSportsDB API to search and render real-time teams, league tables, player lists, and jerseys.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
